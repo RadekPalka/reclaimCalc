@@ -19,7 +19,7 @@ class ReclaimElement{
   }
   
   showDetails(){
-    if (this.details.length === 0){
+    if (!this.details.length){
       return alert("Nie ma nic do wyświetlenia")
     }
     alert(this.details+" Suma: "+ this.sum+ " kg")
