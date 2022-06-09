@@ -9,5 +9,8 @@ console.log(reclaimObjectList)
 addBtn.addEventListener('click', ()=>{
   console.log(reclaimObjectList)
   const sumOfEverything = reclaimObjectList.reduce((prev, next)=> prev + next.sum,0)
-  console.log(sumOfEverything)
+  if (!sumOfEverything){
+    return alert("Nic tu nie ma")
+  }
+  alert(`Suma wynosu ${sumOfEverything} kg`)
 })
