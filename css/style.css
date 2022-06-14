@@ -1,0 +1,25 @@
+p, button, li{
+  font-weight: 800;
+  font-family: sans-serif;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+li{
+  text-decoration: none;
+  margin-bottom: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+li:nth-child(even) {
+  background-color: #efcc00;
+}
+li:nth-child(odd) {
+  background-color: #bc8f8f;
+}
+button{
+  height: 40px;
+  border-radius: 10px;
+}
