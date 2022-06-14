@@ -3,7 +3,7 @@ class ReclaimElement{
     this.li = li
     this.sum = 0
     this.details = []
-    console.log(this.li.childNodes[3])
+    console.log(this.li.childNodes)
     this.li.children[1].addEventListener("click", this.add.bind(this))
     this.li.children[2].addEventListener('click',this.showDetails.bind(this))
   }
@@ -16,6 +16,7 @@ class ReclaimElement{
     this.details.push(amount+ 'kg ')
     this.sum += +amount
     alert(`Dodano ${amount} kg do ${this.li.childNodes[0].textContent}`)
+    this.li.childNodes[1].querySelector('span').textContent = `Suma: ${this.sum} kg`
   }
   
   showDetails(){

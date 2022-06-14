@@ -11,7 +11,7 @@ li{
   margin-bottom: 10px;
   border: 2px solid red;
   border-radius: 10px;
-  padding: 5px 5px;
+  padding: 10px;
 }
 li:nth-child(even) {
   background-color: #efcc00;
@@ -22,4 +22,7 @@ li:nth-child(odd) {
 button{
   height: 40px;
   border-radius: 10px;
+}
+span{
+  margin-left: 30px
 }
