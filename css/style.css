@@ -1,4 +1,4 @@
-p, button, li{
+p, button, li, h1, h2{
   font-weight: 800;
   font-family: sans-serif;
 }
@@ -32,4 +32,8 @@ p.sum1, p.sum2{
   border-radius: 10px;
   padding: 10px;
   background-color: chartreuse;
+}
+h1{
+  border-bottom: 4px dotted black;
+  padding-bottom: 10px;
 }
