@@ -28,7 +28,7 @@ span{
 }
 p.sum1, p.sum2{
   margin-bottom: 10px;
-  border: 2px solid red;
+  border: 2px solid blue;
   border-radius: 10px;
   padding: 10px;
   background-color: chartreuse;

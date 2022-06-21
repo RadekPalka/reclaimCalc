@@ -8,7 +8,7 @@ class ReclaimElement{
     this.li = li
     this.sum = 0
     this.details = []
-    console.log(this.li.childNodes)
+    
     this.li.children[1].addEventListener("click", this.add.bind(this))
     this.li.children[2].addEventListener('click',this.showDetails.bind(this))
   }
