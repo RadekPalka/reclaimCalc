@@ -13,11 +13,17 @@ li{
   border-radius: 10px;
   padding: 10px;
 }
-li:nth-child(even) {
+li.reclaim:nth-child(even) {
   background-color: #efcc00;
 }
-li:nth-child(odd) {
+li.reclaim:nth-child(odd) {
   background-color: #bc8f8f;
+}
+li.reclaim2:nth-child(even) {
+  background-color: cyan;
+}
+li.reclaim2:nth-child(odd) {
+  background-color: #005f69;
 }
 button{
   height: 40px;
