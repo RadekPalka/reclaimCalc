@@ -17,7 +17,7 @@ class AnotherReclaimElement{
     if (!+amount){
       return alert("Niepoprawna wartość")
     }
-    console.log(this)
+    
     this.details.push(amount+ 'kg ')
     this.sum += +amount
     alert(`Dodano ${amount} kg do ${this.li.childNodes[0].textContent}`)
