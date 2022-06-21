@@ -26,3 +26,10 @@ button{
 span{
   margin-left: 30px
 }
+p.sum1, p.sum2{
+  margin-bottom: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: chartreuse;
+}

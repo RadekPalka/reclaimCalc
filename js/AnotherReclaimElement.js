@@ -1,9 +1,9 @@
-const sum1paragraph = document.querySelector('p.sum1')
+const sum2paragraph = document.querySelector('p.sum2')
 
-let sum = 0
+let sum2 = 0
 
 
-class ReclaimElement{
+class AnotherReclaimElement{
   constructor(li){
     this.li = li
     this.sum = 0
@@ -22,8 +22,8 @@ class ReclaimElement{
     this.sum += +amount
     alert(`Dodano ${amount} kg do ${this.li.childNodes[0].textContent}`)
     this.li.childNodes[1].querySelector('span').textContent = `Suma: ${this.sum} kg`
-    sum += +amount
-    sum1paragraph.textContent= `Suma: ${sum}`
+    sum2 += +amount
+    sum2paragraph.textContent= `Suma: ${sum2}`
   }
   
   showDetails(){
