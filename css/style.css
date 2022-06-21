@@ -23,7 +23,7 @@ li.reclaim2:nth-child(even) {
   background-color: cyan;
 }
 li.reclaim2:nth-child(odd) {
-  background-color: #005f69;
+  background-color: #6699CC;
 }
 button{
   height: 40px;
