@@ -1,10 +1,14 @@
 {
-  "name": "Drinks",
-  "short_name": "Drinks",
-  "start_url": ".",
+  "name": "Kalkulator regeneratów",
+  "short_name": "ReclaimCalc",
+  "start_url": "index.html",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A drinks app.",
+  "description": "Reclaim calculator",
+  "dir": "ltr",
+  "lang": "pl",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "images/icon-512x512.png",
