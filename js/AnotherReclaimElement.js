@@ -13,23 +13,98 @@ class AnotherReclaimElement{
     this.li.children[2].addEventListener('click',this.showDetails.bind(this))
   }
   add(){
-    const amount = prompt("Podaj wagę w kilogramach")
+    const buttons= document.querySelectorAll("button")
+    buttons.forEach(button => button.disabled= true)
+    
+    const [reclaimName, cokoId] = this.li.childNodes
+    //console.log(this, reclaimName.textContent, cokoId.textContent)
+    const div = document.createElement("div")
+    document.body.appendChild(div)
+    const paragraphMessage = document.createElement('p')
+    paragraphMessage.style.marginLeft= "10px"
+    const confirmButton = document.createElement('button')
+    confirmButton.style.margin= "0 10px"
+    
+    confirmButton.textContent = "Potwierdź"
+    const cancelButton = document.createElement('button')
+    cancelButton.textContent = "Anuluj"
+    const paragraphInfo = document.createElement('p')
+    paragraphInfo.style.marginLeft= "10px"
+    paragraphMessage.innerHTML = `Wpisz wagę w kilogramach dla: ${reclaimName.textContent}<br> nr Coko: ${cokoId.textContent}<br>`
+    
+    
+    
+    const inputElement = document.createElement("input")
+    inputElement.setAttribute("type", "number")
+    inputElement.style.display= "block"
+    inputElement.style.margin= "0 0 20px 10px"
+    div.append(paragraphMessage, inputElement, confirmButton, cancelButton,  paragraphInfo)
+    div.classList.add("add-window")
+    div.style.top= `${yPosition+ 200}px`
+    //document.body.style.backgroundColor= "#36486b"
+    const addElement =()=>{
+      const amount= inputElement.value
     if (!+amount){
-      return alert("Niepoprawna wartość")
+      return paragraphInfo.textContent= "Niepoprawna wartość"
     }
     
     this.details.push(amount+ 'kg ')
     this.sum += +amount
-    alert(`Dodano ${amount} kg do ${this.li.childNodes[0].textContent}`)
-    this.li.childNodes[1].querySelector('span').textContent = `Suma: ${this.sum} kg`
+    paragraphInfo.textContent= `Dodano ${amount} kg do ${this.li.childNodes[0].textContent}`
+    this.li.childNodes[1].querySelector('span').textContent = ` Suma: ${this.sum} kg`
     sum2 += +amount
     sum2paragraph.textContent= `Suma: ${sum2}`
+    buttons.forEach(button => button.disabled = false)
+    document.body.removeChild(div)
+    confirmButton.removeEventListener("click", addElement)
+    cancelButton.removeEventListener("click", cancelAction)
+    
+    }
+    confirmButton.addEventListener("click", addElement)
+    const cancelAction = () =>{ 
+      confirmButton.removeEventListener("click", addElement)
+      cancelButton.removeEventListener("click", cancelAction)
+      buttons.forEach(button => button.disabled = false)
+      document.body.removeChild(div)
+      
+      
+    }
+    cancelButton.addEventListener("click", cancelAction)
+    
   }
   
   showDetails(){
+    const [reclaimName, cokoId] = this.li.childNodes
+    const buttons= document.querySelectorAll("button")
+    buttons.forEach(button => button.disabled= true)
+    const div = document.createElement("div")
+    document.body.appendChild(div)
+    div.classList.add("add-window")
+    const paragraphInfo = document.createElement('p')
+    paragraphInfo.style.marginLeft= "10px"
+    const confirmButton = document.createElement('button')
+    confirmButton.textContent= "OK"
+    confirmButton.style.display= "block"
+    confirmButton.style.textAlign= "center"
+    confirmButton.style.margin = "10px auto"
+    div.append(paragraphInfo, confirmButton)
+    div.style.top= `${yPosition+ 200}px`
+    
     if (!this.details.length){
-      return alert("Nie ma nic do wyświetlenia")
+      paragraphInfo.textContent ="Nie ma nic do wyświetlenia"
     }
-    alert(this.details+" Suma: "+ this.sum+ " kg")
+    else{
+      
+      paragraphInfo.innerHTML = `Tworzywo: ${reclaimName.textContent}, nr Coko: ${cokoId.textContent} <br> ${this.details}<br> Suma ${this.sum} kg`
+      
+    }
+
+    const closeWindow = () =>{
+      buttons.forEach(button => button.disabled = false)
+      document.body.removeChild(div)
+      confirmButton.removeEventListener("click", closeWindow)
+    }
+
+    confirmButton.addEventListener("click", closeWindow)
   }
 }
