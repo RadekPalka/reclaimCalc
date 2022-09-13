@@ -40,7 +40,7 @@ class AnotherReclaimElement{
     inputElement.style.margin= "0 0 20px 10px"
     div.append(paragraphMessage, inputElement, confirmButton, cancelButton,  paragraphInfo)
     div.classList.add("add-window")
-    div.style.top= `${yPosition+ 200}px`
+    div.style.top= `${window.scrollY+ 200}px`
     //document.body.style.backgroundColor= "#36486b"
     const addElement =()=>{
       const amount= inputElement.value
@@ -88,8 +88,9 @@ class AnotherReclaimElement{
     confirmButton.style.textAlign= "center"
     confirmButton.style.margin = "10px auto"
     div.append(paragraphInfo, confirmButton)
-    div.style.top= `${yPosition+ 200}px`
-    
+    div.style.top= `${window.scrollY+ 200}px`
+    div.style.height = "180px"
+    console.log(window.scrollY)
     if (!this.details.length){
       paragraphInfo.textContent ="Nie ma nic do wyświetlenia"
     }
