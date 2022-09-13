@@ -82,7 +82,9 @@ class ReclaimElement{
     paragraphInfo.style.marginLeft= "10px"
     const confirmButton = document.createElement('button')
     confirmButton.style.display = "block"
+    confirmButton.style.textAlign= "center"
     confirmButton.textContent= "OK"
+    confirmButton.style.margin = "10px auto"
     div.append(paragraphInfo, confirmButton)
     div.style.top= `${window.scrollY + 200}px`
     console.log(window.scrollY)
