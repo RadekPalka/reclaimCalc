@@ -13,6 +13,7 @@ class ReclaimElement{
     this.li.children[2].addEventListener('click',this.showDetails.bind(this))
   }
   add(){
+    
     const buttons= document.querySelectorAll("button")
     buttons.forEach(button => button.disabled= true)
     console.log(window.screen)
