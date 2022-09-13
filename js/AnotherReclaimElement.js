@@ -39,6 +39,7 @@ class AnotherReclaimElement{
     inputElement.style.display= "block"
     inputElement.style.margin= "0 0 20px 10px"
     div.append(paragraphMessage, inputElement, confirmButton, cancelButton,  paragraphInfo)
+    inputElement.select()
     div.classList.add("add-window")
     div.style.top= `${window.scrollY+ 200}px`
     //document.body.style.backgroundColor= "#36486b"
